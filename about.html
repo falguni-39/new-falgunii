@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Global fixes for layout stability */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow-x: hidden;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+    }
+
+    .container, .stats-container, .yellow-box {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .about-heading {
+      font-weight: 700;
+      font-size: 1.75rem;
+    }
+
+    .icon-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 10px 0;
+    }
+
+    .icon-divider::before,
+    .icon-divider::after {
+      content: '';
+      width: 30px;
+      height: 2px;
+      background-color: #888;
+    }
+
+    .section-subtitle {
+      color: #f5b301;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .description {
+      color: #333;
+      font-size: 0.95rem;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .highlight {
+      font-weight: 700;
+      font-size: 1rem;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    @media (min-width: 576px) {
+      .about-heading {
+        font-size: 2rem;
+      }
+      .description, .highlight {
+        font-size: 1.05rem;
+      }
+    }
+.stats-fixed {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.stats-fixed::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url(./images/blur.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.stats-container {
+  position: relative;
+  z-index: 1; /* keeps content above background */
+  width: 100%;
+  max-width: 500px;
+}
+
+    .stat-box {
+      background-color: rgba(0, 0, 0, 0.9);
+      color: #ffc107;
+      text-align: center;
+      padding: 25px 15px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+
+    .stat-box i {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .stat-label {
+      font-size: 1rem;
+      color: #ffffff;
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 576px) {
+      .stat-box {
+        padding: 20px 10px;
+      }
+      .stat-number {
+        font-size: 1.6rem;
+      }
+      .stat-box i {
+        font-size: 2rem;
+      }
+    }
+
+    .achievement-section {
+      text-align: center;
+      padding: 40px 15px;
+    }
+
+    .achievement-section h2 {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .achievement-divider {
+      width: 100px;
+      height: 2px;
+      background-color: black;
+      margin: 0 auto 10px;
+    }
+
+    .achievement-icon {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: black;
+    }
+
+    .achievement-desc {
+      color: #f6b70a;
+      font-weight: 500;
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    .certificate-img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 576px) {
+      .achievement-desc {
+        font-size: 1rem;
+        padding: 0 10px;
+      }
+    }
+
+    .specialist-section {
+      text-align: center;
+      padding: 40px 15px;
+    }
+
+    .specialist-section h2 {
+      font-weight: bold;
+    }
+
+    .divider {
+      width: 100px;
+      height: 2px;
+      background-color: black;
+      margin: 10px auto;
+    }
+
+    .car-icon {
+      font-size: 20px;
+      color: black;
+      margin-bottom: 20px;
+    }
+
+    .yellow-box {
+      background-color: #ffcf00;
+      padding: 30px 20px;
+      border-radius: 6px;
+      margin-top: 20px;
+    }
+
+    .yellow-box h5 {
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .yellow-box p {
+      margin: 0;
+      color: white;
+    }
+
+    .yellow-box .highlight {
+      font-weight: bold;
+    }
+
+    @media (max-width: 576px) {
+      .yellow-box {
+        padding: 20px 15px;
+      }
+    }
+    .contact-section{
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .divider-line{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+    .divivfer-line::before,
+    .divider-line::after{
+      flex: 1;
+      content: "";
+      height: 1px;
+      /* background-color:; */
+    margin: 0 10px;
+    }
+    .divider-icon{
+      font-size: 24px;
+      color: #000;
+    }
+    .contact-text{
+      font-size: 24px;
+      color: #1a4ca4;
+      font-weight: 600
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container py-4 px-3 text-center">
+    <div class="text-start mb-2">
+      <a href="#" class="text-dark fs-4"><i class="fas fa-chevron-left"></i></a>
+    </div>
+    <h2 class="about-heading">ABOUT US</h2>
+    <div class="icon-divider">
+      <i class="fa-solid fa-car"></i>
+    </div>
+    <div class="section-subtitle mb-3">Who we are?</div>
+    <p class="description">
+      GVW Rent a Car is providing service in the Tourism Sector Since 1989. We provide all kinds of Taxi Cars, Mini coaches, Large coaches, Wedding Cars, Vintage Cars, Self-Drive Cars and all types of easy, smooth, Familiar and comfortable transportation facilities to the guests’, at the most nominal and Reasonable rates possible. All types of A/C and Non A/c comfortable transportation available at all times.
+    </p>
+    <p class="highlight">
+      We specialise in providing transportation services in Rajasthan, Gujarat, Delhi and all the States of North India.
+    </p>
+  </div>
+
+  <section class="stats-fixed">
+    <div class="stats-container">
+      <div class="stat-box">
+        <i class="fas fa-smile"></i>
+        <div class="stat-number">1000+</div>
+        <div class="stat-label">HAPPY CLIENTS</div>
+      </div>
+      <div class="stat-box">
+        <i class="fas fa-car-side"></i>
+        <div class="stat-number">50,000+</div>
+        <div class="stat-label">TOUR COMPLETED</div>
+      </div>
+      <div class="stat-box">
+        <i class="fas fa-circle-notch"></i>
+        <div class="stat-number">30+</div>
+        <div class="stat-label">YEARS OF EXPERIENCE</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="achievement-section">
+    <h2>OUR ACHIEVEMENTS</h2>
+    <div class="achievement-divider"></div>
+    <div class="achievement-icon"><i class="fa-solid fa-car"></i></div>
+    <p class="achievement-desc">
+      GVW Rent A Car is "first" travel company to <br>
+      be recognised by Government of <br>
+      Rajasthan in whole division.
+    </p>
+    <img src="images/certificate.png" alt="Certificate" class="certificate-img" width="400" height="300" loading="lazy">
+  </section>
+
+  <section class="specialist-section">
+    <h2>We are specialist of :</h2>
+    <div class="divider"></div>
+    <div class="car-icon"><i class="fas fa-car-side"></i></div>
+    <div class="yellow-box text-white">
+      <h5 class="text-black">PERSONALISED EVENTS</h5>
+      <p>
+        We at <span class="highlight">GVW Rent A Car</span> in Udaipur can <br />
+        assist you to make your day very special. <br />
+        We are specialised in arranging <span class="highlight">cars, taxi</span> <br />
+        and <span class="highlight">cabs</span> for the events in Udaipur.
+      </p>
+      <br />
+      <p>
+        Events in Udaipur inspire bright elements <br />
+        of regality as well as majesty to the most <br />
+        expected moments of life.
+      </p>
+    </div>
+    <div class="container contact-section">
+    <div class="divider-line">
+      <i class="bi bi-car-front divider-icon"></i>
+    </div>
+    <div class="contact">Contact Us</div>
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
